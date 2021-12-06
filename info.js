@@ -61,10 +61,13 @@ function validateName() {
   isValid = false
   var regName = /^[A-Z]+[a-zA-Z]+$/
   if (regName.test(fname.value.trim()) && regName.test(lname.value.trim())) {
-    alert("Valid name given.")
     isValid = true
   } else {
-    alert("Invalid name given.")
+    document.querySelector("#error-2").innerHTML =
+      "Name must start with a cap and only alphabet allowed!"
+    document.querySelector("#error-2").style.display = "block"
+    fname.classList.add("not-valid")
+    lname.classList.add("not-valid")
   }
   return isValid
 }
@@ -76,7 +79,10 @@ function educationChecked() {
       count++
     }
   }
-  if (count === 0) alert("Must select an education")
+  if (count === 0) {
+    document.querySelector("#error-3").innerHTML = "Must select an education"
+    document.querySelector("#error-3").style.display = "block"
+  }
   return count
 }
 
@@ -84,16 +90,17 @@ function validateUsername() {
   isValid = false
   var regUser = /^[a-zA-Z][a-zA-Z0-9]{6,}$/
   if (!regUser.test(username.value.trim())) {
-    alert(
-      "username must start with an alphabet and have at least 6 characters!"
-    )
+    document.querySelector("#error-4").innerHTML =
+      "username must start with an alphabet"
+    document.querySelector("#error-4").style.display = "block"
+    username.classList.add("not-valid")
     return isValid
   }
   return true
 }
 var resetBtn = document.signup.resetBtn
 function clearForm() {
-  fname, lname, password1, username, (password2 = "")
+  fname = lname = password1 = username = password2 = ""
 }
 
 function validate() {
@@ -106,6 +113,9 @@ function validate() {
   )
     return isValid
   document.querySelector("#error-1").style.display = "none"
+  password1.classList.remove("not-valid")
+  password2.classList.remove("not-valid")
   alert("Form Submission Sucess!")
+
   return (isValid = true)
 }

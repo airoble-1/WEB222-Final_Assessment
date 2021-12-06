@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
+/* Variables */
 :root {
-  --max-width: 1100px;
+  --max-width: 900px;
   --header-height: 7rem;
   --footer-height: 7rem;
 }
@@ -64,12 +65,24 @@ h1 {
   color: blueviolet;
 }
 
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 footer {
   height: var(--footer-height);
   border: 2px solid black;
   border-radius: 0.5rem;
   margin-top: 8rem;
 }
+
+/* Utility Classes*/
 
 .container {
   max-width: var(--maxWidth);
@@ -81,9 +94,18 @@ footer {
   display: grid;
   grid-template-columns: 1fr 5fr;
   height: calc(100vh - var(--header-height) - var(--footer-height));
+  grid-column-gap: 1rem;
 }
 
-aside {
+.grid-three-column {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+/* Links and Errors */
+
+#nav {
   background-color: bisque;
   font-size: 3rem;
   text-align: center;
@@ -94,13 +116,34 @@ aside {
 
 #nav li {
   margin-bottom: 2rem;
+  transition: all 0.3s ease-in-out;
 }
 
+#nav a:hover,
+#nav a:focus {
+  color: darkorange;
+}
+
+.error-title {
+  font-size: 2.5rem;
+  text-decoration: underline;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.error {
+  color: red;
+  display: none;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Form Styles */
 main {
   border-radius: 0.5rem;
   border: 2px solid black;
   background: rgba(218, 174, 81, 0.9);
 }
+
 #form {
   display: flex;
   flex-flow: column;
@@ -129,8 +172,8 @@ form {
   margin: 0 auto;
 }
 
-label,
-p {
+#form label,
+#form p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -183,12 +226,13 @@ button[type="reset"] {
   cursor: pointer;
 }
 
-.error {
-  color: red;
-  display: none;
-  font-size: 1.5rem;
-}
-
 .not-valid {
   border: 2px solid red;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: orangered;
+  font-size: 4rem;
 }
