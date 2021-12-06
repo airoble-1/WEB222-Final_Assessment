@@ -4,7 +4,119 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/normalize.css">
     <title>Ahmed Roble</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div id="header-container" class="header-container">
+        <h1>User Info Page</h1>
+      </div>
+    </header>
+    <div class="container grid">
+      <aside>
+        <nav id="nav">
+          <ul>
+            <li><a href="#">Info</a></li>
+            <li><a href="./reflection.html">Reflection</a></li>
+            <li><a href="honesty.html">Honesty</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main><form id="form" action="https://httpbin.org/post" method="post" name="signup" onsubmit = "return(validate());">
+        <input type="hidden" name="lastName" id="lastName" value="Roble" />
+        <input type="hidden" name="studentId" id="studentId" value="060678141" />
+        
+        <div class="flex-input">
+          <label for="first-name">First name</label><br />
+          <input
+            type="text"
+            id="first-name"
+            name="user_first-name"
+            required
+          />
+        </div>
+        <div class="flex-input">
+          <label for="last-name">Last name</label><br />
+          <input
+            type="text"
+            id="last-name"
+            name="user_last-name"
+            required
+          />
+        </div>
+  
+        <div class="flex-input">
+          <label for="email">Email Address</label><br />
+          <input
+            type="email"
+            id="email"
+            name="user_email"
+            required
+          />
+        </div>
+        <div class="flex-input">
+          <label for="username">Username</label><br />
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            minlength="6"
+          />
+        </div>
+  
+        <div class="flex-input">
+          <label for="pass">Password</label><br />
+          <input
+            type="password"
+            id="pass"
+            name="password"
+            
+          />
+        </div>
+  
+        <div class="flex-input">
+          <label for="confirm-pass">Confirm Password</label><br />
+          <input
+            type="password"
+            id="confirm-pass"
+            name="password"
+            
+          />
+  
+        <div class="border"></div>
+  
+        <p>Education Status</p>
+        <div class="flex-radio">
+          <input type="radio" id="graduated" name="userEducation" />
+          <label for="graduated">Graduated</label>
+        </div>
+        <div class="flex-radio">
+          <input type="radio" id="enrolled" name="userEducation" />
+          <label for="enrolled">Currently Enrolled</label>
+        </div>
+        <div class="flex-radio">
+          <input type="radio" id="did-not-graduate" name="userEducation" />
+          <label for="did-not-graduate">Did not Graduate</label>
+        </div>
+  
+        <div class="flex-input">
+        <label for="tentacles">Age</label><br>
+        <input type="number" id="age" name="user_age"
+         min="18" max="60" required>
+          </div>
+        
+        <button type="submit">Sign Up</button>
+        <button name="resetBtn" type="reset">Reset</button>
+      </form>
+    </main>
+
+    </div>
+      <footer>
+      <p><i>Link to github</i></p>
+    </footer>
+    <script src="./info.js"></script>
+  </body>
 </html>
+  
