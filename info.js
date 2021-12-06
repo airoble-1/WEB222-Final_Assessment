@@ -18,26 +18,40 @@ var radio_btns = document.signup.userEducation
 function validatePassword() {
   var isValid = false
   if (password1.value.trim().length < 6) {
-    alert("Password must contain atleast 6 characters!")
+    document.querySelector("#error-1").innerHTML =
+      "Password must contain atleast 6 characters!"
+    document.querySelector("#error-1").style.display = "block"
+    password1.classList.add("not-valid")
     return isValid
   }
   let re = /^[a-zA-Z]/
   if (!re.test(password1.value.trim())) {
-    alert("Password must start with an alphabet!")
+    document.querySelector("#error-1").innerHTML =
+      "Password must start with an alphabet!"
+    document.querySelector("#error-1").style.display = "block"
+    password1.classList.add("not-valid")
     return isValid
   }
   re = /[0-9]/
   if (!re.test(password1.value.trim())) {
-    alert("Password must have 1 digit!")
+    document.querySelector("#error-1").innerHTML = "Password must have 1 digit!"
+    document.querySelector("#error-1").style.display = "block"
+    password1.classList.add("not-valid")
     return isValid
   }
   re = /[A-Z]/
   if (!re.test(password1.value.trim())) {
-    alert("Password must have 1 uppercase!")
+    document.querySelector("#error-1").innerHTML =
+      "Password must have 1 uppercase!"
+    document.querySelector("#error-1").style.display = "block"
+    password1.classList.add("not-valid")
     return isValid
   }
   if (password1.value.trim() !== password2.value.trim()) {
-    alert("Passwords do not match!")
+    document.querySelector("#error-1").innerHTML = "Passwords must match!"
+    document.querySelector("#error-1").style.display = "block"
+    password1.classList.add("not-valid")
+    password2.classList.add("not-valid")
     return isValid
   }
   return (isValid = true)
@@ -91,6 +105,7 @@ function validate() {
     !validateUsername()
   )
     return isValid
+  document.querySelector("#error-1").style.display = "none"
   alert("Form Submission Sucess!")
   return (isValid = true)
 }
