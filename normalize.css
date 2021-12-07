@@ -144,14 +144,6 @@ main {
   background: rgba(218, 174, 81, 0.9);
 }
 
-#form {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  padding-top: 10px;
-  border-radius: 3px;
-}
-
 label {
   color: rgb(0, 0, 0);
   margin-top: 27px;
@@ -211,7 +203,7 @@ button[type="submit"] {
   font-size: 2rem;
   border-radius: 0.5rem;
   border: none;
-  margin-right: 7rem;
+  margin-right: 1rem;
   cursor: pointer;
 }
 

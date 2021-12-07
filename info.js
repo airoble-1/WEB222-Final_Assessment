@@ -1,14 +1,3 @@
-// First name: Must start with a cap and only alphabet allowed.
-
-//  Last name: Must start with a cap and only alphabet allowed.
-
-// Password: must be at least 6 characters long, must start with an alphabet,
-// must have at least 1 digit and 1 uppercase.
-// The password strings must match.
-// Pattern attribute is not allowed for this field
-
-// Username: username must start with an alphabet, must have at least 6 characters.
-// Pattern attribute is not allowed for this field.
 var fname = document.querySelector("#first-name")
 var lname = document.querySelector("#last-name")
 var password1 = document.querySelector("#pass")
